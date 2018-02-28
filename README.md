@@ -3,6 +3,11 @@ A git pre-commit hook that prevents users from committing any jasmine tests that
 
 This Git hook will scan all *\*spec.js* files and check for any focused Jasmine tests. Commit will not be allowed whilst any tests are focused.
 
+## Prerequisites
+- Python3
+
+[Python Downloads](https://www.python.org/downloads/)
+
 ## Installation
 1. Copy the *pre-commit* file into the */.get/hooks/* folder of your local repository.
 2. Remove the *pre-commit.sample* file if it exists.
