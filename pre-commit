@@ -27,7 +27,7 @@ def testsAreFocused(fileContents):
 	return False
 		
 def writeFocusedTestError(filePath):
-	print("\033[1;31m" + "Focused test found in: " + filePath + "\033[0;0m")
+	print("Focused test found in: " + filePath)
 
 someTestsAreFocused = False
 for root, dirs, filePaths in findAllSourceFiles():
