@@ -1,5 +1,5 @@
 # jasmine-focus-reminder
-A git pre-commit hook that prevents jasmine tests being committed if any tests are focused
+A git pre-commit hook that prevents users from committing any jasmine tests that are focused.
 
 This Git hook will scan all *\*spec.js* files and check for any focused Jasmine tests. Commit will not be allowed whilst any tests are focused.
 
