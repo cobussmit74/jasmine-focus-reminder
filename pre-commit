@@ -1,0 +1,41 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+sourceFolder = "./source/"
+testFilesEndWith = [ "spec.js", "specs.js" ]
+focusedTestIdentifiers = [ "fit(" , "fdescribe(" ]
+
+def findAllSourceFiles():
+	return os.walk(sourceFolder)
+	
+def fileContainsTests(filePath):
+	for endWithCheck in testFilesEndWith:
+		if filePath.endswith(endWithCheck):
+			return True
+	return False
+			
+def readFileContents(filePath):
+	with open(os.path.join(root, filePath), "r") as file:
+		return file.read()
+		
+def testsAreFocused(fileContents):
+	for identifier in focusedTestIdentifiers:
+		if identifier in fileContents:
+			return True
+	return False
+		
+def writeFocusedTestError(filePath):
+	print("\033[1;31m" + "Focused test found in: " + filePath + "\033[0;0m")
+
+someTestsAreFocused = False
+for root, dirs, filePaths in findAllSourceFiles():
+	for filePath in filePaths:
+		if fileContainsTests(filePath):
+			if testsAreFocused(readFileContents(filePath)):
+				writeFocusedTestError(os.path.join(root, filePath))
+				someTestsAreFocused = True
+				
+if someTestsAreFocused:
+	sys.exit(1)
