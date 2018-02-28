@@ -6,7 +6,7 @@ This Git hook will scan all *\*spec.js* files and check for any focused Jasmine 
 ## Installation
 1. Copy the *pre-commit* file into the */.get/hooks/* folder of your local repository.
 2. Remove the *pre-commit.sample* file if it exists.
-3. Configure the *sourceFolder* and *testFilesEndWith* variables at the top of the script to match your project.
+3. Configure the *sourceFolder* and *testFilesEndWith* variables at the top of the script to match your project structure.
 4. Laugh out load at the peasants who still accidently commit focused tests!
 
 ## Usage
